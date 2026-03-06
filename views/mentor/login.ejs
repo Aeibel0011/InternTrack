@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Student Login</title>
+
+  <!-- Google Font -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Correct CSS path -->
+    <link rel="stylesheet" href="/css/login.css">
+</head>
+
+<body>
+
+  <div class="page">
+    <div class="container">
+
+      <!-- LEFT -->
+      <div class="left">
+
+        <div class="header">
+          <!-- Logo -->
+    <a href="/" class="logo">
+      <img src="/images/logo2.png" alt="Internship Management System">
+    </a>
+
+        </div>
+
+        <div  class="form-box">
+          <h1>Sign In</h1>
+          <p>Enter your email and password to sign in</p>
+
+          <form method="POST" action="/mentor/login">
+            <div class="field">
+              <label>Email</label>
+              <input type="email" name="email" placeholder="info@gmail.com" required>
+            </div>
+
+            <div class="field">
+              <label>Password</label>
+              <input type="password" name="password" placeholder="Enter your password" required>
+            </div>
+
+            <div class="options">
+              <!-- <label>
+                <input type="checkbox"> Keep me logged in
+              </label> -->
+              <a href="#">Forgot password?</a>
+            </div>
+
+            <button type="submit">Sign In</button>
+          </form>
+        </div>
+
+      </div>
+
+      <!-- RIGHT -->
+      <div class="right" style="background-image: url(/images/login-bg2.png ) ; ">
+        <div class="branding">
+          <h2>Internship Portal</h2>
+          <p>Mentor Login Area</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</body>
+</html>

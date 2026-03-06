@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Daily Attendance - InternTrack</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="/stylesheets/style.css">
+  <link rel="stylesheet" href="/stylesheets/mentor.css">
+</head>
+<body>
+
+<!-- ================= NAVBAR ================= -->
+<%- include('../partials/mentor-navbar.ejs') %>
+
+<main class="attendance-page">
+
+  <!-- PAGE HEADER -->
+  <div class="attendance-header">
+    <h1> Daily Attendance</h1>
+    <p>Mark morning and afternoon attendance for today</p>
+    
+    <div class="date-selector">
+      <label for="attendanceDate">Select Date:</label>
+      <input type="date" id="attendanceDate" readonly>
+    </div>
+  </div>
+
+
+  <!-- SUCCESS MESSAGE -->
+  <div class="success-msg" id="successMsg">
+    ✓ Attendance saved successfully for today.
+  </div>
+
+  <!-- ERROR MESSAGE -->
+  <div class="error-msg" id="errorMsg">
+    ⚠️ Error saving attendance. Please try again.
+  </div>
+
+  <!-- ATTENDANCE TABLE -->
+  <div class="attendance-table-wrapper">
+    <table class="attendance-table">
+      <thead>
+        <tr>
+          <th>Student Name</th>
+          <th>Student ID</th>
+          <th>Internship Title</th>
+          <th colspan="2">Morning Session</th>
+          <th colspan="2">Afternoon Session</th>
+          <th>Day Total</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% if (assignedStudents && assignedStudents.length > 0) { %>
+          <% assignedStudents.forEach((student) => { %>
+            <tr data-student-id="<%= student._id %>">
+              <td class="student-name-cell"><%= student.firstName %> <%= student.lastName %></td>
+              <td class="student-id-cell"><%= student.studentEmail %></td>
+              <td><%= student.companyName %></td>
+              <td colspan="2" class="session-cell">
+                <label class="session-label">Session</label>
+                <div class="session-toggle">
+                  <button class="toggle-btn" data-session="morning" data-status="present">Present</button>
+                  <button class="toggle-btn" data-session="morning" data-status="absent">Absent</button>
+                </div>
+              </td>
+              <td colspan="2" class="session-cell">
+                <label class="session-label">Session</label>
+                <div class="session-toggle">
+                  <button class="toggle-btn" data-session="afternoon" data-status="present">Present</button>
+                  <button class="toggle-btn" data-session="afternoon" data-status="absent">Absent</button>
+                </div>
+              </td>
+              <td data-day-total style="text-align: center; font-weight: 600;">0</td>
+            </tr>
+          <% }); %>
+        <% } else { %>
+          <tr>
+            <td colspan="8" style="text-align: center; padding: 30px; color: #999;">
+              <strong>No students assigned yet</strong>
+            </td>
+          </tr>
+        <% } %>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ACTION BUTTONS -->
+  <div class="attendance-actions">
+    <button class="save-btn" id="saveAttendanceBtn"> Save Attendance</button>
+    <button class="reset-btn" id="resetAttendanceBtn">🔄 Reset Form</button>
+  </div>
+
+  <!-- ATTENDANCE STATISTICS -->
+  <section class="attendance-stats">
+    <h2 class="stats-title">Attendance Statistics</h2>
+
+    <div class="stats-grid">
+      <% if (assignedStudents && assignedStudents.length > 0) { %>
+        <% assignedStudents.forEach((student) => { %>
+          <div class="student-stat-card" data-stat-student-id="<%= student._id %>">
+            <div class="stat-card-header">
+              <span class="stat-student-name"><%= student.firstName %> <%= student.lastName %></span>
+              <span class="stat-percentage">0%</span>
+            </div>
+            <div class="stat-bar-wrapper">
+              <div class="stat-progress-bar">
+                <div class="stat-progress-fill" style="width: 0%;"></div>
+              </div>
+            </div>
+            <div class="stat-details">
+              <div class="detail-item">
+                <span class="detail-label">Total Days</span>
+                <span class="detail-value">0</span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-label">Total Sessions</span>
+                <span class="detail-value">0</span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-label">Present</span>
+                <span class="detail-value">0</span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-label">Absent</span>
+                <span class="detail-value">0</span>
+              </div>
+            </div>
+          </div>
+        <% }); %>
+      <% } else { %>
+        <div style="grid-column: 1 / -1; text-align: center; padding: 30px; color: #999;">
+          <strong>No students assigned yet</strong>
+        </div>
+      <% } %>
+    </div>
+  </section>
+
+</main>
+
+<!-- Scripts -->
+<script src="/javascripts/mentor.js"></script>
+
+</body>
+</html>

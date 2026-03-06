@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>InternTrack — Internship Management System</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/home.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav id="navbar">
+  <div class="container">
+    <div class="d-flex align-items-center justify-content-between">
+      <a href="#" class="nav-logo">Intern<span>Track</span></a>
+      <div class="d-none d-lg-flex align-items-center gap-1">
+        <a href="#" class="nav-link-custom">Home</a>
+        <a href="#features" class="nav-link-custom">Features</a>
+        <a href="#roles" class="nav-link-custom">Roles</a>
+        <a href="#how-it-works" class="nav-link-custom">How It Works</a>
+        <a href="#stats" class="nav-link-custom">About</a>
+      </div>
+      <div class="d-flex align-items-center gap-2">
+        <a href="#" class="btn-nav-login" data-bs-toggle="modal" data-bs-target="#loginModal">Login</a>
+        <a href="#features" class="btn-nav-outline d-none d-md-inline-flex">Get Started</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-blob blob-1"></div>
+  <div class="hero-blob blob-2"></div>
+  <div class="hero-blob blob-3"></div>
+  <div class="container py-5" style="padding-top: 100px !important;">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-6">
+        <!-- <div class="hero-badge hero-fade hero-fade-1">
+           Internship Management System
+        </div> -->
+        <h1 class="hero-title hero-fade hero-fade-2">
+          Streamline<br>Internships.<br><span class="accent">Empower Growth.</span>
+        </h1>
+        <p class="hero-subtitle hero-fade hero-fade-3">
+          InternTrack simplifies attendance tracking, task management, and performance monitoring for institutions — connecting students, mentors, and supervisors.
+        </p>
+        <div class="d-flex flex-wrap gap-3 hero-fade hero-fade-4 hero-buttons">
+          <a href="/role-select?mode=login" class="btn-hero-primary" >
+            <i class="bi bi-box-arrow-in-right"></i> Login Now
+          </a>
+          <a href="#features" class="btn-hero-outline">
+            <i class="bi bi-play-circle"></i> Explore Features
+          </a>
+        </div>
+        <div class="d-flex align-items-center gap-4 mt-4 hero-fade hero-fade-4" style="opacity: 0.9;">
+          <div class="d-flex align-items-center gap-2" style="color: rgba(255,255,255,0.65); font-size: 0.85rem;">
+            <i class="bi bi-check-circle-fill" style="color: var(--green-light);"></i> 100+ Interns Managed
+          </div>
+          <div class="d-flex align-items-center gap-2" style="color: rgba(255,255,255,0.65); font-size: 0.85rem;">
+            <i class="bi bi-check-circle-fill" style="color: var(--green-light);"></i> 95% Accuracy
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6 hero-fade hero-fade-5">
+        <div class="dashboard-mockup">
+          <div class="mockup-bar">
+            <div class="mockup-dot" style="background: #ff5f56;"></div>
+            <div class="mockup-dot" style="background: #febc2e;"></div>
+            <div class="mockup-dot" style="background: #27c840;"></div>
+            <div class="mockup-title-bar"></div>
+          </div>
+          <div class="mockup-row">
+            <div class="mockup-stat">
+              <div class="mockup-stat-val">124</div>
+              <div class="mockup-stat-label">Total Interns</div>
+            </div>
+            <div class="mockup-stat">
+              <div class="mockup-stat-val">96%</div>
+              <div class="mockup-stat-label">Attendance</div>
+            </div>
+            <div class="mockup-stat">
+              <div class="mockup-stat-val">42</div>
+              <div class="mockup-stat-label">Tasks Done</div>
+            </div>
+          </div>
+          <div class="mockup-chart-row">
+            <div class="mockup-bar-item" style="height: 45%;"></div>
+            <div class="mockup-bar-item" style="height: 70%;"></div>
+            <div class="mockup-bar-item" style="height: 55%;"></div>
+            <div class="mockup-bar-item" style="height: 90%;"></div>
+            <div class="mockup-bar-item" style="height: 65%;"></div>
+            <div class="mockup-bar-item" style="height: 80%;"></div>
+            <div class="mockup-bar-item" style="height: 75%;"></div>
+          </div>
+          <div style="font-size: 0.72rem; color: var(--green-light); margin-bottom: 10px; text-transform: uppercase; letter-spacing: 0.5px;">Recent Attendance</div>
+          <div class="mockup-table-row">
+            <div class="mockup-avatar">JD</div>
+            <div class="mockup-name-col"><div class="mockup-name-line"></div><div class="mockup-sub-line"></div></div>
+            <span class="mockup-badge badge-present">Present</span>
+          </div>
+          <div class="mockup-table-row">
+            <div class="mockup-avatar">SM</div>
+            <div class="mockup-name-col"><div class="mockup-name-line"></div><div class="mockup-sub-line"></div></div>
+            <span class="mockup-badge badge-present">Present</span>
+          </div>
+          <div class="mockup-table-row">
+            <div class="mockup-avatar">KL</div>
+            <div class="mockup-name-col"><div class="mockup-name-line"></div><div class="mockup-sub-line"></div></div>
+            <span class="mockup-badge badge-absent">Absent</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section id="features">
+  <div class="container">
+    <div class="text-center mb-5 reveal">
+      <span class="section-tag">What We Offer</span>
+      <h2 class="section-title mb-3">Powerful Features</h2>
+      <p class="section-subtitle mx-auto">Everything you need to manage internship programs efficiently — from day one to final evaluation.</p>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-4 reveal reveal-delay-1">
+        <div class="feature-card">
+          <div class="feature-icon-wrap"><i class="bi bi-people-fill"></i></div>
+          <h5>Student Management</h5>
+          <p>Centralized profiles for all interns with progress tracking, document management, and complete internship history.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4 reveal reveal-delay-2">
+        <div class="feature-card">
+          <div class="feature-icon-wrap"><i class="bi bi-calendar2-check"></i></div>
+          <h5>Attendance Tracking</h5>
+          <p>Precise AM & PM session logging with real-time status updates, automated reports, and absence alerts.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4 reveal reveal-delay-3">
+        <div class="feature-card">
+          <div class="feature-icon-wrap"><i class="bi bi-kanban"></i></div>
+          <h5>Task Assignment & Monitoring</h5>
+          <p>Assign tasks, set deadlines, track submissions, and review completed work all in one seamless workflow.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4 reveal reveal-delay-1">
+        <div class="feature-card">
+          <div class="feature-icon-wrap"><i class="bi bi-star-half"></i></div>
+          <h5>Performance Evaluation</h5>
+          <p>Structured rubrics and scorecards for mentors to assess intern performance at every stage of the program.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4 reveal reveal-delay-2">
+        <div class="feature-card">
+          <div class="feature-icon-wrap"><i class="bi bi-graph-up-arrow"></i></div>
+          <h5>Real-time Progress Tracking</h5>
+          <p>Live dashboards with charts and analytics — instantly know how each intern is performing across all metrics.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4 reveal reveal-delay-3">
+        <div class="feature-card">
+          <div class="feature-icon-wrap"><i class="bi bi-shield-lock"></i></div>
+          <h5>Multi-role Access System</h5>
+          <p>Secure, role-based access for Students, Mentors, and Supervisors — each seeing only what they need.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section id="how-it-works">
+  <div class="container">
+    <div class="text-center mb-5 reveal">
+      <span class="section-tag">The Process</span>
+      <h2 class="section-title mb-3">How InternTrack Works</h2>
+      <p class="section-subtitle mx-auto">A seamless three-step workflow designed for institutions of all sizes.</p>
+    </div>
+    <div class="timeline-wrap">
+      <div class="timeline-step reveal reveal-delay-1">
+        <div class="timeline-step-num">1</div>
+        <i class="bi bi-person-plus-fill timeline-step-icon"></i>
+        <h4>Students Register & Join</h4>
+        <p>Students create profiles, submit required documents, and get enrolled into their internship program with ease.</p>
+      </div>
+      <div class="timeline-connector reveal"></div>
+      <div class="timeline-step reveal reveal-delay-2">
+        <div class="timeline-step-num">2</div>
+        <i class="bi bi-person-badge-fill timeline-step-icon"></i>
+        <h4>Mentors Manage Daily</h4>
+        <p>Mentors log attendance for AM and PM sessions, assign tasks, review submissions, and provide feedback in real time.</p>
+      </div>
+      <div class="timeline-connector reveal"></div>
+      <div class="timeline-step reveal reveal-delay-3">
+        <div class="timeline-step-num">3</div>
+        <i class="bi bi-binoculars-fill timeline-step-icon"></i>
+        <h4>Supervisors Monitor All</h4>
+        <p>Supervisors get a full-picture view — overall performance, attendance summaries, and institutional analytics on demand.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ROLES -->
+<section id="roles">
+  <div class="container">
+    <div class="text-center mb-5 reveal">
+      <span class="section-tag">User Roles</span>
+      <h2 class="section-title mb-3">Built for Every Stakeholder</h2>
+      <p class="section-subtitle mx-auto">InternTrack serves three core roles, each with a tailored experience and dedicated access.</p>
+    </div>
+    <div class="row g-4 justify-content-center">
+      <div class="col-md-4 reveal reveal-delay-1">
+        <div class="role-card">
+          <div class="role-avatar avatar-student"><i class="bi bi-mortarboard-fill"></i></div>
+          <h4>Student</h4>
+          <p>Access your personal internship portal — view attendance records, check assigned tasks, track your progress, and submit deliverables.</p>
+          <a href="#" class="btn-role" data-bs-toggle="modal" data-bs-target="#loginModal" data-role="Student">
+            Login as Student
+          </a>
+        </div>
+      </div>
+      <div class="col-md-4 reveal reveal-delay-2">
+        <div class="role-card">
+          <div class="role-avatar avatar-mentor"><i class="bi bi-person-workspace"></i></div>
+          <h4>Mentor</h4>
+          <p>Manage your assigned interns day-to-day — log attendance, assign and review tasks, and submit evaluations with ease.</p>
+          <a href="#" class="btn-role" data-bs-toggle="modal" data-bs-target="#loginModal" data-role="Mentor">
+            Login as Mentor
+          </a>
+        </div>
+      </div>
+      <div class="col-md-4 reveal reveal-delay-3">
+        <div class="role-card">
+          <div class="role-avatar avatar-supervisor"><i class="bi bi-eye-fill"></i></div>
+          <h4>Supervisor</h4>
+          <p>Oversee the entire internship program — monitor cohort performance, generate reports, and ensure institutional compliance.</p>
+          <a href="#" class="btn-role" data-bs-toggle="modal" data-bs-target="#loginModal" data-role="Supervisor">
+            Login as Supervisor
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section id="stats">
+  <div class="container position-relative">
+    <div class="row g-4 align-items-center justify-content-center text-center">
+      <div class="col-6 col-md-3 stat-item reveal reveal-delay-1">
+        <div class="stat-number"><span class="counter" data-target="100">0</span><span class="stat-suffix">+</span></div>
+        <div class="stat-label">Interns Managed</div>
+      </div>
+      <div class="col-6 col-md-3 stat-item reveal reveal-delay-2">
+        <div class="stat-number"><span class="counter" data-target="50">0</span><span class="stat-suffix">+</span></div>
+        <div class="stat-label">Mentors Active</div>
+      </div>
+      <div class="col-6 col-md-3 stat-item reveal reveal-delay-3">
+        <div class="stat-number"><span class="counter" data-target="30">0</span><span class="stat-suffix">+</span></div>
+        <div class="stat-label">Supervisors</div>
+      </div>
+      <div class="col-6 col-md-3 stat-item reveal reveal-delay-4">
+        <div class="stat-number"><span class="counter" data-target="95">0</span><span class="stat-suffix">%</span></div>
+        <div class="stat-label">Attendance Accuracy</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="cta">
+  <div class="container position-relative">
+    <div class="reveal">
+      <h2>Ready to Transform<br>Internship Management?</h2>
+      <p>Join institutions already using InternTrack to streamline, monitor, and elevate their internship programs.</p>
+      <a href="#" class="btn-cta" data-bs-toggle="modal" data-bs-target="#loginModal">
+        <i class="bi bi-box-arrow-in-right"></i> Login to InternTrack
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="row g-5">
+      <div class="col-lg-4">
+        <span class="footer-logo">Intern<span>Track</span></span>
+        <p class="footer-tagline">Connecting students, mentors, and supervisors through a seamless internship management experience.</p>
+        <div class="footer-social mt-4">
+          <a href="#" class="social-btn"><i class="bi bi-twitter-x"></i></a>
+          <a href="#" class="social-btn"><i class="bi bi-linkedin"></i></a>
+          <a href="#" class="social-btn"><i class="bi bi-facebook"></i></a>
+          <a href="#" class="social-btn"><i class="bi bi-instagram"></i></a>
+        </div>
+      </div>
+      <div class="col-6 col-lg-2">
+        <h6>Navigation</h6>
+        <a href="#" class="footer-link">Home</a>
+        <a href="#features" class="footer-link">Features</a>
+        <a href="#roles" class="footer-link">Roles</a>
+        <a href="#how-it-works" class="footer-link">How It Works</a>
+      </div>
+      <div class="col-6 col-lg-2">
+        <h6>Portals</h6>
+        <a href="#" class="footer-link" data-bs-toggle="modal" data-bs-target="#loginModal">Student Login</a>
+        <a href="#" class="footer-link" data-bs-toggle="modal" data-bs-target="#loginModal">Mentor Login</a>
+        <a href="#" class="footer-link" data-bs-toggle="modal" data-bs-target="#loginModal">Supervisor Login</a>
+      </div>
+      <div class="col-lg-4">
+        <h6>Contact</h6>
+        <div class="d-flex flex-column gap-2">
+          <div class="d-flex align-items-center gap-2" style="font-size: 0.88rem;">
+            <i class="bi bi-envelope" style="color: var(--green-light);"></i>
+            <span>support@interntrack.edu</span>
+          </div>
+          <div class="d-flex align-items-center gap-2" style="font-size: 0.88rem;">
+            <i class="bi bi-telephone" style="color: var(--green-light);"></i>
+            <span>+1 (800) INTERN-1</span>
+          </div>
+          <div class="d-flex align-items-center gap-2" style="font-size: 0.88rem;">
+            <i class="bi bi-geo-alt" style="color: var(--green-light);"></i>
+            <span>Education City, Innovation Campus</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <hr class="footer-divider" />
+    <div class="d-flex flex-wrap justify-content-between align-items-center gap-3">
+      <p class="footer-copy mb-0">© 2024 InternTrack. All rights reserved.</p>
+      <div class="d-flex gap-3">
+        <a href="#" class="footer-link" style="font-size: 0.82rem;">Privacy Policy</a>
+        <a href="#" class="footer-link" style="font-size: 0.82rem;">Terms of Service</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- LOGIN MODAL -->
+<div class="modal fade login-modal" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content border-0 shadow" style="border-radius: 20px; overflow: hidden;">
+      <div class="modal-header border-0 px-4 py-4">
+        <div>
+          <h5 class="modal-title fw-bold" id="loginModalLabel" style="font-family: 'Syne', sans-serif; font-size: 1.3rem;">Welcome Back</h5>
+          <p class="mb-0" style="color: rgba(255,255,255,0.75); font-size: 0.88rem;">Sign in to your InternTrack account</p>
+        </div>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body px-4 pb-4">
+        <div class="mb-4">
+          <label class="form-label" style="font-weight: 600; font-size: 0.85rem; color: var(--text-muted);">I am a</label>
+          <div class="d-flex gap-2">
+            <div class="role-select-btn active" data-role-pick="Student">🎓 Student</div>
+            <div class="role-select-btn" data-role-pick="Mentor">👤 Mentor</div>
+            <div class="role-select-btn" data-role-pick="Supervisor">🔍 Supervisor</div>
+          </div>
+        </div>
+        <div class="mb-3">
+          <label class="form-label" style="font-weight: 600; font-size: 0.85rem;">Email address</label>
+          <input type="email" class="form-control" placeholder="you@institution.edu" style="padding: 12px; border-radius: 10px;" />
+        </div>
+        <div class="mb-4">
+          <label class="form-label" style="font-weight: 600; font-size: 0.85rem;">Password</label>
+          <input type="password" class="form-control" placeholder="••••••••" style="padding: 12px; border-radius: 10px;" />
+        </div>
+        <button class="btn-login-submit">Login to InternTrack</button>
+        <p class="text-center mt-3 mb-0" style="font-size: 0.85rem; color: var(--text-muted);">
+          Forgot your password? <a href="#" style="color: var(--green-accent); font-weight: 600;">Reset here</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  // NAVBAR SCROLL
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 40);
+  });
+
+  // SCROLL REVEAL
+  const revealEls = document.querySelectorAll('.reveal');
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.12 });
+  revealEls.forEach(el => revealObserver.observe(el));
+
+  // COUNTER ANIMATION
+  let counterStarted = false;
+  const counters = document.querySelectorAll('.counter');
+  const statsSection = document.getElementById('stats');
+  const statsObserver = new IntersectionObserver((entries) => {
+    if (entries[0].isIntersecting && !counterStarted) {
+      counterStarted = true;
+      counters.forEach(counter => {
+        const target = parseInt(counter.dataset.target);
+        const duration = 1800;
+        const start = performance.now();
+        function update(timestamp) {
+          const progress = Math.min((timestamp - start) / duration, 1);
+          const ease = 1 - Math.pow(1 - progress, 3);
+          counter.textContent = Math.floor(ease * target);
+          if (progress < 1) requestAnimationFrame(update);
+          else counter.textContent = target;
+        }
+        requestAnimationFrame(update);
+      });
+    }
+  }, { threshold: 0.4 });
+  statsObserver.observe(statsSection);
+
+  // ROLE SELECT IN MODAL
+  document.querySelectorAll('.role-select-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+      document.querySelectorAll('.role-select-btn').forEach(b => b.classList.remove('active'));
+      this.classList.add('active');
+    });
+  });
+
+  // PRE-SELECT ROLE FROM ROLE CARDS
+  document.querySelectorAll('[data-role]').forEach(btn => {
+    btn.addEventListener('click', function() {
+      const role = this.dataset.role;
+      if (!role) return;
+      const target = document.querySelector(`[data-role-pick="${role}"]`);
+      if (target) {
+        document.querySelectorAll('.role-select-btn').forEach(b => b.classList.remove('active'));
+        target.classList.add('active');
+      }
+    });
+  });
+
+  // PARALLAX ON HERO
+  window.addEventListener('scroll', () => {
+    const scrollY = window.scrollY;
+    document.querySelector('.hero-blob.blob-1').style.transform = `translate(${scrollY * 0.03}px, ${scrollY * -0.05}px) scale(1)`;
+    document.querySelector('.hero-blob.blob-2').style.transform = `translate(${scrollY * -0.02}px, ${scrollY * -0.03}px) scale(1)`;
+  });
+</script>
+</body>
+</html>

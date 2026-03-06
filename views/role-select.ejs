@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Choose Role | Internship Management System</title>
+
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+<body>
+
+<!-- ================= HEADER ================= -->
+<header class="navbar">
+  <div class="container nav-wrapper">
+    <a href="/" class="logo">
+      <img src="/images/logo2.png" alt="IMS Logo">
+    </a>
+
+    <nav class="simple-nav">
+     
+      <a href="/" style="color: white; text-decoration: none; " class="button">← Back to Home</a>
+      
+    </nav>
+  </div>
+</header>
+
+<!-- ================= MAIN ================= -->
+<main class="role-section">
+  <div class="role-container fade-up">
+    <h1>Choose Your Role to Continue</h1>
+    <p class="subtitle">Select how you want to access the system</p>
+
+    <div class="role-grid">
+      <!-- Student -->
+      <a href="student/<%= mode %>" style="text-decoration: none;">
+
+      <div class="role-card" data-role="student">
+        <div class="icon">🎓</div>
+        <h3>Student</h3>
+        <p>Access internships, track progress, submit reports</p>
+      </div>
+        </a>
+      <!-- Mentor -->
+       <a href="mentor/<%= mode %>" style="text-decoration: none;">
+      <div class="role-card" data-role="mentor">
+        <div class="icon">🧑‍🏫</div>
+        <h3>Mentor</h3>
+        <p>Guide interns, review performance, provide feedback</p>
+      </div>
+         </a>
+      <!-- Supervisor -->
+       <a href="supervisor/<%= mode %>" style="text-decoration: none;">
+      <div class="role-card" data-role="supervisor">
+        <div class="icon">🛠️</div>
+        <h3>Supervisor</h3>
+        <p>Oversee programs, manage mentors and students</p>
+      </div>
+      </a>
+    </div>
+  </div>
+</main>
+
+<!-- JS -->
+<script src="/javascripts/script.js" defer></script>
+
+</body>
+</html>

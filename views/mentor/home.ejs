@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Mentor Dashboard - InternTrack</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="/stylesheets/style.css">
+<link rel="stylesheet" href="/stylesheets/mentor.css">
+  
+</head>
+<body>
+
+<!-- ================= NAVBAR ================= -->
+<%- include('../partials/mentor-navbar.ejs') %>
+
+<main class="content-main">
+
+  <!-- WELCOME SECTION -->
+  <section class="welcome-section">
+    <div class="welcome-content">
+      <h1> Welcome back, <%= mentor?.fullName || "Mentor" %>!</h1>
+      <p><strong><%= mentor?.companyName || "Your Company" %></strong> | Guide your interns toward success. Monitor progress, provide feedback, and help them grow.</p>
+
+      <div class="stats-cards">
+        <div class="stat-card">
+          <div class="stat-label">Total Students</div>
+          <div class="stat-number"><%= assignedStudents?.length || 0 %></div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Active Internships</div>
+          <div class="stat-number"><%= assignedStudents?.length || 0 %></div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Pending Reviews</div>
+          <div class="stat-number">0</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MY STUDENTS SECTION -->
+  <section>
+    <h2 class="section-title">My Students</h2>
+
+    <div class="students-grid">
+      <% if (assignedStudents && assignedStudents.length > 0) { %>
+        <% assignedStudents.forEach((student, index) => { %>
+          <!-- Student Card -->
+          <div class="student-card">
+            <div class="student-header">
+              <div class="student-info">
+                <h3><%= student.firstName %> <%= student.lastName %></h3>
+                <div class="student-id">Email: <%= student.studentEmail %></div>
+              </div>
+              <span class="status-badge status-active">Active</span>
+            </div>
+
+            <p class="internship-title"> <%= student.companyName %></p>
+
+            <div class="progress-section">
+              <div class="progress-label">
+                <span>Progress</span>
+                <span style="color: #4CAF50; font-weight: 700;">75%</span>
+              </div>
+              <div class="progress-bar">
+                <div class="progress-fill"></div>
+              </div>
+            </div>
+
+            <div class="student-actions">
+              <div>
+                <button class="btn btn-primary btn-with-help">View Details</button>
+                <!-- <span class="helper-text">Check student info & progress</span> -->
+              </div>
+              <div>
+                <button class="btn btn-secondary btn-with-help">Assign Task</button>
+                <!-- <span class="helper-text">Create new task</span> -->
+              </div>
+            </div>
+          </div>
+        <% }); %>
+      <% } else { %>
+        <!-- Empty State Message -->
+        <div class="empty-state">
+          <h3>📋 No students assigned yet</h3>
+          <p>Students will appear here once they join your mentorship</p>
+        </div>
+      <% } %>
+    </div>
+  </section>
+
+<!-- 
+  <section class="attendance-section">
+    <h2 class="section-title">Attendance</h2>
+
+    
+    <div class="reminder-banner">
+      <div class="reminder-icon">📅</div>
+      <div class="reminder-text">
+        <strong>Reminder:</strong> Mark student attendance daily before 6:00 PM to keep internship records accurate.
+      </div>
+    </div> -->
+
+  
+    <!-- <div class="confirmation-msg" id="confirmationMsg">
+      ✓ Attendance saved successfully.
+    </div>
+
+
+    <table class="attendance-table">
+      <thead>
+        <tr>
+          <th>Student Name</th>
+          <th>Student ID</th>
+          <th>Internship Title</th>
+          <th>Status</th>
+          <th>Date</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="student-name-cell">John Doe</td>
+          <td>STU001234</td>
+          <td>Frontend Developer</td>
+          <td><span class="status-badge status-active">Active</span></td>
+          <td class="attendance-date" id="date1"><script>document.write(new Date().toLocaleDateString())</script></td>
+          <td>
+            <input type="checkbox" class="attendance-checkbox" onchange="showConfirmation()">
+            Present
+          </td>
+        </tr>
+        <tr>
+          <td class="student-name-cell">Sarah Smith</td>
+          <td>STU001235</td>
+          <td>Backend Developer</td>
+          <td><span class="status-badge status-active">Active</span></td>
+          <td class="attendance-date" id="date2"><script>document.write(new Date().toLocaleDateString())</script></td>
+          <td>
+            <input type="checkbox" class="attendance-checkbox" onchange="showConfirmation()">
+            Present
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </section> -->
+
+  <!-- MENTOR ACTIONS SECTION -->
+  <!-- <section class="actions-section">
+    <h2 class="section-title">Quick Actions</h2>
+    
+    <div class="actions-grid">
+      <div class="action-btn-wrapper">
+        <a href="#" class="action-btn">📋 Assign Internship</a>
+        <div class="action-helper">Create new internship assignment</div>
+      </div>
+      <div class="action-btn-wrapper">
+        <a href="#" class="action-btn">📊 Review Submissions</a>
+        <div class="action-helper">Check pending student work</div>
+      </div>
+      <div class="action-btn-wrapper">
+        <a href="#" class="action-btn">📢 Send Announcement</a>
+        <div class="action-helper">Notify all students</div>
+      </div>
+      <div class="action-btn-wrapper">
+        <a href="#" class="action-btn">📈 Generate Reports</a>
+        <div class="action-helper">Create performance report</div>
+      </div>
+    </div>
+  </section> -->
+
+</main>
+<footer class="footer" id="contact">
+  <div class="footer-container">
+
+    <!-- BRAND / LOGO -->
+    <div class="footer-brand">
+      <img src="/images/logo2.png" alt="Internship Management System Logo">
+      <p>Professional internship tracking platform.</p>
+    </div>
+
+    <!-- QUICK LINKS -->
+    <div class="footer-links">
+      <h4>Quick Links</h4>
+      <a href="/">Home</a>
+      <a href="#features">Features</a>
+      <a href="#contact">Contact</a>
+    </div>
+
+    <!-- CONTACT -->
+    <div class="footer-contact">
+      <h4>Contact</h4>
+      <p>Email: <span>admin@internship.com</span></p>
+      <p>Phone: <span>+91 XXXXXXXX</span></p>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    © 2026 Internship Management System. All rights reserved.
+  </div>
+</footer>
+
+<script src="/javascripts/mentor.js"></script>
+
+</body>
+</html>

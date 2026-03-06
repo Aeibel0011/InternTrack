@@ -1,0 +1,47 @@
+<header class="navbar" id="navbar">
+  <div class="container nav-wrapper">
+
+    <!-- Logo -->
+    <a href="/mentor/home" class="logo">
+      <img src="/images/logo2.png" alt="InternTrack">
+    </a>
+
+    <!-- Nav Links -->
+    <nav class="nav-menu" id="navMenu">
+      <ul class="nav-links">
+        <li><a href="/mentor/home" class="active">Dashboard</a></li>
+        <li><a href="/mentor/students">My Students</a></li>
+        <li><a href="/mentor/attendance">Attendance</a></li>
+        <li><a href="/mentor/tasks">Tasks</a></li>
+        <li><a href="/mentor/reports">Feedback</a></li>
+        <li><a href="/mentor/messages">Messages</a></li>
+      </ul>
+    </nav>
+
+    <!-- Profile Dropdown -->
+    <div class="auth-buttons">
+      <div class="profile-menu">
+        <img src="/assetss/imgs/people/avatar2.jpg" class="profile-img" />
+        <div class="profile-dropdown">
+          <% if (locals.currentMentor) { %>
+            
+            <a href="/mentor/profile">Profile</a>
+            <a href="/mentor/settings">Settings</a>
+            <a href="/mentor/logout" class="danger">Logout</a>
+          <% } else { %>
+            <a href="/mentor/login">Login</a>
+            <a href="/mentor/signup">Sign up</a>
+          <% } %>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hamburger -->
+    <div class="menu-toggle" id="menuToggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+  </div>
+</header>

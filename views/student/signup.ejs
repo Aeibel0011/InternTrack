@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Student Sign Up</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+
+<div class="page">
+  <div class="auth-container">
+
+    <!-- LEFT SIDE -->
+    <div class="auth-left">
+
+      <div class="header">
+        <a href="/" class="logo">
+          <img src="/images/logo2.png" alt="Internship Management System">
+        </a>
+      </div>
+
+      <div class="form-wrapper">
+        <h1>Create an account</h1>
+        <p class="subtitle">Enter your details to sign up</p>
+
+        <!-- 🔴 IMPORTANT: CORRECT ACTION -->
+        <form id="signupForm" method="POST" action="/student/signup">
+
+          <!-- ================= STEP 1: STUDENT ================= -->
+          <div class="form-step active">
+            <div class="row">
+              <div class="field">
+                <label>First Name</label>
+                <input type="text" name="firstName" placeholder="Enter first name" required>
+              </div>
+              <div class="field">
+                <label>Last Name</label>
+                <input type="text" name="lastName" placeholder="Enter last name" required>
+              </div>
+            </div>
+            <div class="field">
+              <label>Role</label>
+              <input type="text" name="role" placeholder="Enter your role" required>
+            </div>
+            <div class="field">
+              <label>Email</label>
+              <input type="email" name="studentEmail" placeholder="Enter email" required>
+            </div>
+
+            <div class="field">
+              <label>Phone Number</label>
+              <input type="tel" name="phone" placeholder="Enter phone number" required>
+            </div>
+
+            <div class="field">
+              <label>Password</label>
+              <input type="password" name="password" placeholder="Enter password" required>
+            </div>
+
+            <button type="button" class="primary-btn next-btn">Next →</button>
+          </div>
+
+          <!-- ================= STEP 2: MENTOR ================= -->
+          <div class="form-step">
+            <div class="field">
+              <label>Company Name</label>
+              <input type="text" name="companyName" placeholder="Enter company name" required>
+            </div>
+
+            <div class="field">
+              <label>Mentor Name</label>
+              <input type="text" name="mentorName" placeholder="Enter mentor name" required>
+            </div>
+
+            <div class="field">
+              <label>Mentor Email</label>
+              <input type="email" name="mentorEmail" placeholder="Enter mentor email" required>
+            </div>
+
+          <button type="button" style="width: 45%; margin-right: 21px;" class="primary-btn back-btn">←- Back</button>
+          <button type="button"style=" width: 45%; margin-left: 8px;" class="primary-btn next-btn">Next -→</button>
+          </div>
+
+          <!-- ================= STEP 3: SUPERVISOR ================= -->
+          <div class="form-step">
+            <div class="field">
+              <label>Supervisor Name</label>
+              <input type="text" name="supervisorName" placeholder="Enter supervisor name" required>
+            </div>
+
+            <div class="field">
+              <label>Supervisor Email</label>
+              <input type="email" name="supervisorEmail" placeholder="Enter supervisor email" required>
+            </div>
+
+            <button type="button"style="width: 45%; margin-right: 21px;" class="primary-btn back-btn">←- Back</button>
+          <button id="signup-btn" type="submit">Sign Up</button>
+          </div>
+
+        </form>
+
+        <p class="switch-auth">
+          Already have an account?
+          <a href="/student/login">Sign In</a>
+        </p>
+
+      </div>
+    </div>
+
+    <!-- RIGHT SIDE -->
+    <div class="auth-right">
+      <div class="branding">
+        <h2>Student</h2>
+        <p>Track your internship progress, reports, and mentor feedback.</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ================= MULTI-STEP SCRIPT ================= -->
+<script>
+  const steps = document.querySelectorAll(".form-step");
+  let current = 0;
+
+  function showStep(index) {
+    steps.forEach((step, i) => {
+      step.style.display = i === index ? "block" : "none";
+    });
+  }
+
+  showStep(current);
+
+  document.querySelectorAll(".next-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+      if (current < steps.length - 1) {
+        current++;
+        showStep(current);
+      }
+    });
+  });
+
+  document.querySelectorAll(".back-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+      if (current > 0) {
+        current--;
+        showStep(current);
+      }
+    });
+  });
+</script>
+
+</body>
+</html>

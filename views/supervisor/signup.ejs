@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Supervisor Sign Up</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+
+<div class="page">
+  <div class="auth-container">
+
+    <!-- LEFT SIDE -->
+    <div class="auth-left">
+
+      <div class="header">
+        <a href="/" class="logo">
+          <img src="/images/logo2.png" alt="Internship Management System">
+        </a>
+      </div>
+
+      <div class="form-wrapper">
+        <h1>Create Supervisor Account</h1>
+        <p class="subtitle">Enter your details to sign up as a supervisor</p>
+
+        <form method="POST" action="/signup/supervisor">
+
+          <div class="field">
+            <label>Full Name</label>
+            <input type="text" name="fullName" placeholder="Enter full name" required>
+          </div>
+
+          <div class="field">
+            <label>College Name</label>
+            <input type="text" name="collegeName" placeholder="Enter college name" required>
+          </div>
+
+          <div class="field">
+            <label>Email</label>
+            <input type="email" name="email" placeholder="Enter email" required>
+          </div>
+
+          <div class="field">
+            <label>Phone Number</label>
+            <input type="tel" name="phone" placeholder="Enter phone number" required>
+          </div>
+
+          <div class="field">
+            <label>Password</label>
+            <input type="password" name="password" placeholder="Enter password" required>
+          </div>
+
+          <button type="submit" class="primary-btn" style="width: 100%;">
+            Sign Up
+          </button>
+
+        </form>
+
+        <p class="switch-auth">
+          Already have an account?
+          <a href="/supervisor/login">Sign In</a>
+        </p>
+
+      </div>
+    </div>
+
+    <!-- RIGHT SIDE (UNCHANGED) -->
+    <div class="auth-right">
+      <div class="branding">
+        <h2> Supervisor</h2>
+        <p>Monitor academic progress and validate internship activities.</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>My Students - InternTrack</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="/stylesheets/style.css">
+  <link rel="stylesheet" href="/stylesheets/mentor.css">
+  
+</head>
+<body>
+
+<!-- ================= NAVBAR ================= -->
+<%- include('../partials/mentor-navbar.ejs') %>
+
+<main class="content-main">
+
+  <!-- MY STUDENTS SECTION -->
+  <section>
+    <h2 style="text-align: left;" class="section-title">My Students</h2>
+
+    <div class="students-grid">
+      <% 
+        const students = assignedStudents && assignedStudents.length > 0 ? assignedStudents : [];
+      %>
+      
+      <% if (students && students.length > 0) { %>
+        <% students.forEach((student) => { %>
+          <!-- Student Card -->
+          <div class="student-card">
+            <!-- Profile Image at Top -->
+            <div style="text-align: center; margin-bottom: 16px;">
+              <img src="<%= student.profileImage && student.profileImage.trim() !== '' ? student.profileImage : '/images/default.png' %>" alt="<%= student.firstName %> <%= student.lastName %>" style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover; border: 2px solid #4CAF50; box-shadow: 0 4px 12px rgba(76, 175, 80, 0.2);">
+            </div>
+
+            <div class="student-header">
+              <div class="student-info">
+                <h3><%= student.firstName %> <%= student.lastName %></h3>
+                <div class="student-id">Email: <%= student.studentEmail %></div>
+              </div>
+              <span class="status-badge status-active"><%= student.status || 'Active' %></span>
+            </div>
+
+            <p class="internship-title"> <%= student.companyName %></p>
+
+            <div class="progress-section">
+              <div class="progress-label">
+                <span>Progress</span>
+                <span style="color: #4CAF50; font-weight: 700;">75%</span>
+              </div>
+              <div class="progress-bar">
+                <div class="progress-fill"></div>
+              </div>
+            </div>
+
+            <div class="student-actions">
+              <div>
+                <a href="/mentor/student/<%= student._id %>" class="btn btn-primary btn-with-help" style="text-decoration: none; display: block;">View Details</a>
+               
+              </div>
+              <div>
+                <button class="btn btn-secondary btn-with-help">Assign Task</button>
+                
+              </div>
+            </div>
+          </div>
+        <% }); %>
+      <% } else { %>
+        <!-- Empty State Message -->
+        <div class="empty-state">
+          <h3>📋 No students assigned yet</h3>
+          <p>Students will appear here once they join your mentorship</p>
+        </div>
+      <% } %>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer" id="contact">
+  <div class="footer-container">
+
+    <!-- BRAND / LOGO -->
+    <div class="footer-brand">
+      <img src="/images/logo2.png" alt="Internship Management System Logo">
+      <p>Professional internship tracking platform.</p>
+    </div>
+
+    <!-- QUICK LINKS -->
+    <div class="footer-links">
+      <h4>Quick Links</h4>
+      <a href="/">Home</a>
+      <a href="#features">Features</a>
+      <a href="#contact">Contact</a>
+    </div>
+
+    <!-- CONTACT -->
+    <div class="footer-contact">
+      <h4>Contact</h4>
+      <p>Email: <span>admin@internship.com</span></p>
+      <p>Phone: <span>+91 XXXXXXXX</span></p>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    © 2026 Internship Management System. All rights reserved.
+  </div>
+</footer>
+
+<script src="/javascripts/mentor.js"></script>
+
+</body>
+</html>

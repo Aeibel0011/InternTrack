@@ -1,0 +1,46 @@
+<header class="navbar" id="navbar">
+  <div class="container nav-wrapper">
+
+    <!-- Logo -->
+    <a href="/student/dashboard" class="logo">
+      <img src="/images/logo2.png" alt="InternTrack">
+    </a>
+
+    <!-- Nav Links -->
+    <nav class="nav-menu" id="navMenu">
+      <ul class="nav-links">
+        <li><a href="/student/dashboard" class="active">Dashboard</a></li>
+        <li><a href="/student/internships">My Internship</a></li>
+        <li><a href="/student/applications">Applications</a></li>
+        <li><a href="/student/progress">Progress</a></li>
+        <li><a href="/student/messages">Messages</a></li>
+      </ul>
+    </nav>
+ 
+    <!-- Profile Dropdown -->
+    <div class="auth-buttons">
+      <div class="profile-menu">
+        <img src="/assetss/imgs/people/avatar2.jpg" class="profile-img" />
+        <div class="profile-dropdown">
+          <% if (locals.currentStudent) { %>
+            <!-- <div class="profile-name">Hello, <strong><%= currentStudent.name %></strong></div> -->
+            <a href="/student/profile">Profile</a>
+            <a href="/student/settings">Settings</a>
+            <a href="/student/logout" class="danger">Logout</a>
+          <% } else { %>
+            <a href="/student/login">Login</a>
+            <a href="/student/signup">Sign up</a>
+          <% } %>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hamburger -->
+    <div class="menu-toggle" id="menuToggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+  </div>
+</header>
