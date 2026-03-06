@@ -1,0 +1,240 @@
+/* ================= RESET ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: #ffffff;
+  color: #1f2937;
+}
+
+/* ================= PAGE LAYOUT ================= */
+.page {
+  height: 100vh;
+}
+
+.container {
+  display: flex;
+  height: 100%;
+}
+
+/* ================= LEFT SIDE ================= */
+.left {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(to right, #7cd983, #ffffff);
+}
+
+/* HEADER */
+.header {
+  padding: 20px;
+}
+
+.header a {
+  text-decoration: none;
+   color: #ffffff;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.logo img {
+max-height: 126px;
+    margin-left: 5px;
+    width: auto;
+    object-fit: contain;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+.logo img:hover {
+  transform: scale(1.05);
+  filter: drop-shadow(0 0 6px rgba(76, 175, 80, 0.4));
+}
+
+.header a {
+  text-decoration: none;
+  color: #6b7280;
+  font-size: 14px;
+}
+
+/* ================= BACK BUTTON ================= */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  font-size: 14px;
+  font-weight: 500;
+ 
+  background: #1B5E20;;
+  border-radius: 8px;
+  
+  transition: all 0.25s ease;
+}
+
+.btn:hover {
+  background: rgba(68, 224, 78, 0.87);
+  transform: translateX(-2px);
+  color: #ffffff;
+}
+
+
+
+/* FORM BOX */
+.form-box {
+max-width: 400px;
+    margin: auto;
+    padding: 40px;
+    margin-top: 130px;
+    
+    border-radius: 40px;
+}
+.form-box  {
+  box-shadow:
+    0 25px 60px rgba(0, 0, 0, 0.25),
+    0 10px 25px rgba(0, 0, 0, 0.15);
+}
+.form-box h1 {
+  font-size: 26px;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #1B5E20;
+}
+
+.form-box p {
+  font-size: 14px;
+  color: #4b5563;
+  margin-bottom: 26px;
+  line-height: 1.6;
+}
+
+/* ================= FORM ================= */
+.field {
+  margin-bottom: 16px;
+}
+
+.field label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #374151;
+}
+
+.field input {
+  width: 100%;
+  height: 46px;
+  padding: 10px 14px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 14px;
+  background: #ffffff;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.field input:focus {
+  outline: none;
+  border-color: #1B5E20;
+  box-shadow: 0 0 0 3px rgba(27, 94, 32, 0.15);
+}
+
+
+/* OPTIONS */
+.options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+  margin-bottom: 24px;
+}
+
+.options label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #374151;
+}
+
+.options a {
+  color: #1B5E20;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.options a:hover {
+  text-decoration: underline;
+}
+
+/* BUTTON */
+button {
+  width: 100%;
+  height: 48px;
+  border: none;
+  background: #1B5E20;
+  color: white;
+  font-size: 15px;
+  font-weight: 500;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+button:hover {
+  background: #164d1a;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 18px rgba(27, 94, 32, 0.25);
+}
+
+/* ================= RIGHT SIDE (BACKGROUND IMAGE) ================= */
+.right {
+  width: 50%;
+  position: relative;
+  background-image: url("/images/login-bg1.png"); /* 🔴 CHANGE IMAGE HERE */
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+
+
+/* BRANDING CONTENT */
+.branding {
+ margin-bottom: 537px;
+  text-align: center;
+ 
+ 
+}
+
+.branding h2 {
+  font-size: 26px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  letter-spacing: 0.3px;
+  color: #003d11;
+}
+
+.branding p {
+  font-size: 14px;
+  color: #003d11;
+  line-height: 1.6;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 900px) {
+  .right {
+    display: none;
+  }
+
+  .left {
+    width: 100%;
+  }
+
+  .form-box {
+    padding: 0 20px;
+  }
+}

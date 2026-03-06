@@ -1,0 +1,263 @@
+/* ================= RESET ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+body {
+  background: #f5f6fa;
+}
+
+/* ================= LAYOUT ================= */
+.page {
+  min-height: 100vh;
+}
+
+.auth-container {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* ================= HEADER / LOGO ================= */
+.logo {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.logo img {
+  max-height: 120px;
+  width: auto;
+  object-fit: contain;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.logo img:hover {
+  transform: scale(1.05);
+  filter: drop-shadow(0 0 6px rgba(76, 175, 80, 0.4));
+}
+
+/* ================= LEFT PANEL ================= */
+.auth-left {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to right, #7cd983, #ffffff);
+  padding: 20px;
+}
+
+/* ================= FORM WRAPPER ================= */
+.form-wrapper {
+  width: 100%;
+  max-width: 420px;
+  padding: 40px;
+
+  border-radius: 40px;
+  
+}
+.form-wrapper {
+  box-shadow:
+    0 25px 60px rgba(0, 0, 0, 0.25),
+    0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* ================= TEXT ================= */
+h1 {
+  font-size: 28px;
+  margin-bottom: 6px;
+  color: #111827;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: #6b7280;
+  margin-bottom: 25px;
+}
+
+/* ================= FORM ================= */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.row {
+  display: flex;
+  gap: 12px;
+}
+
+@media (max-width: 480px) {
+  .row {
+    flex-direction: column;
+  }
+}
+
+.field label {
+  font-size: 13px;
+  color: #374151;
+  margin-bottom: 5px;
+  display: block;
+}
+
+.field input {
+  width: 100%;
+  padding: 11px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  font-size: 14px;
+  outline: none;
+}
+
+.field input::placeholder {
+  color: #9ca3af;
+}
+
+.field input:focus {
+  border-color: #4CAF50;
+  box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.15);
+}
+
+/* ================= BUTTONS ================= */
+.primary-btn {
+  margin-top: 10px;
+  padding: 13px;
+  border-radius: 8px;
+  border: none;
+  background: #4CAF50;
+  width: 100%;
+  color: #ffffff;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.primary-btn:hover {
+  background: #dbffcf;
+  color: darkgreen;
+}
+
+.secondary-btn {
+  margin-top: 15px;
+  padding: 13px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  background: #ffffff;
+  color: #374151;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.secondary-btn:hover {
+  background: #f3f4f6;
+}
+
+#signup-btn {
+  margin-top: 10px;
+  padding: 13px;
+  border-radius: 8px;
+  border: none;
+  font-size: 15px;
+  cursor: pointer;
+  width: 100%;
+  color: darkgreen;
+  background-color: #dbffcf;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+#signup-btn:hover {
+  background: #4CAF50;
+  color: #ffffff;
+}
+
+/* ================= SWITCH AUTH ================= */
+.switch-auth {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #374151;
+  text-align: center;
+}
+
+.switch-auth a {
+  color: #4CAF50;
+  text-decoration: none;
+}
+
+.switch-auth a:hover {
+  text-decoration: underline;
+}
+
+/* ================= MULTI STEP (SAFE KEEP) ================= */
+.form-step {
+  display: none;
+}
+
+.form-step.active {
+  display: block;
+}
+
+/* ================= RIGHT PANEL ================= */
+.auth-right {
+  width: 50%;
+  background-image: url("/images/login-bg1.png");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* ================= BRANDING ================= */
+.branding {
+ margin-bottom: 537px;
+  text-align: center;
+ 
+ 
+}
+
+.branding h2 {
+  font-size: 30px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  letter-spacing: 0.3px;
+  color: #003d11;
+  font-family: 'Poppins', sans-serif;
+}
+
+.branding p {
+  font-size: 15px;
+  color: #003d11;
+  line-height: 1.6;
+   font-family: 'Poppins', sans-serif;
+}
+
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 900px) {
+  .auth-container {
+    flex-direction: column;
+  }
+
+  .auth-right {
+    display: none;
+  }
+
+  .auth-left {
+    width: 100%;
+    min-height: 100vh;
+  }
+
+  .form-wrapper {
+    padding: 30px 20px;
+    border-radius: 25px;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+}

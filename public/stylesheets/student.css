@@ -1,0 +1,173 @@
+/* ================= GLOBAL ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: #ffffff;
+  color: #333;
+}
+
+.content-main {
+  max-width: 1100px;
+  margin: auto;
+  padding: 100px 20px 40px;
+}
+
+/* ================= WELCOME ================= */
+.student-welcome {
+  background: linear-gradient(to right, #e8f5e9, #ffffff);
+  padding: 30px;
+  border-radius: 14px;
+  margin-bottom: 25px;
+}
+
+.student-welcome h2 {
+  color: #1B5E20;
+  margin-bottom: 6px;
+}
+
+/* ================= STATUS CARDS ================= */
+.status-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.status-card {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
+
+.status-active {
+  color: #2e7d32;
+  font-weight: 600;
+}
+
+/* ================= PROGRESS ================= */
+.progress-section {
+  margin-bottom: 30px;
+}
+
+.progress-bar {
+  background: #e0e0e0;
+  border-radius: 20px;
+  overflow: hidden;
+  margin-top: 10px;
+}
+
+.progress-fill {
+  background: #4CAF50;
+  color: #fff;
+  padding: 8px;
+  text-align: center;
+  border-radius: 20px;
+  font-size: 14px;
+}
+
+/* ================= TASKS ================= */
+.tasks-section {
+  margin-bottom: 30px;
+}
+
+.task-list {
+  list-style: none;
+  margin-top: 10px;
+}
+
+.task-list li {
+  background: #ffffff;
+  padding: 14px;
+  margin-bottom: 12px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.05);
+}
+
+/* ================= BUTTONS ================= */
+.btn {
+  background: #4CAF50;
+  color: #fff;
+  padding: 6px 14px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 13px;
+}
+
+.btn:hover {
+  background: #43a047;
+}
+
+.btn-outline {
+  border: 2px solid #4CAF50;
+  color: #4CAF50;
+  padding: 5px 12px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 13px;
+}
+
+.btn-outline:hover {
+  background: #4CAF50;
+  color: #fff;
+}
+
+/* ================= INFO GRID ================= */
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.info-card {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
+
+.announcement-list {
+  margin-top: 10px;
+}
+
+.announcement-list li {
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+/* ================= DOCUMENTS ================= */
+.docs-section {
+  margin-bottom: 30px;
+}
+
+.doc-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  margin-top: 10px;
+}
+
+.doc-card {
+  background: #f1f8f4;
+  padding: 18px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+  .content-main {
+    padding-top: 90px;
+  }
+}
